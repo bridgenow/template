@@ -1,0 +1,54 @@
+<!doctype html>
+<head>
+  {% block starthead %}
+  {% endblock starthead %}
+  <meta charset="{{ resource.meta.charset }}">
+
+  <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
+  <meta name="description" content="{{ resource.meta.description }}">
+  <meta name="author" content="{{ resource.meta.author }}">
+
+  <meta name="viewport" content="{{ resource.meta.viewport }}">
+
+  {% block css %}
+    <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+  {% endblock css %}
+
+  {% block headjs %}
+  {% endblock headjs %}
+
+  {% block endhead %}
+  {% endblock endhead %}
+</head>
+<body>
+  <div id="container">
+      {% block container %}
+        <header class="banner">
+          {% block header -%}
+            <h1>BridgeNow</h1>
+          {%- endblock %}
+
+          {% block nav %}
+          {% endblock nav %}
+        </header>
+
+        <section class="content">
+          {% block content %}
+          {% endblock content %}
+        </section>
+    {% endblock container %}
+  </div>
+  <footer>
+  </footer>
+
+  {% block js %}
+  {% block scripts %}
+  {% endblock scripts %}
+
+  {% block analytics %}
+    {% include "analytics.j2" %}
+  {% endblock analytics %}
+
+  {% endblock js %}
+</body>
+</html>

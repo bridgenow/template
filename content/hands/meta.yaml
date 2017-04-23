@@ -1,0 +1,2 @@
+extends: hand.j2
+default_block: main
