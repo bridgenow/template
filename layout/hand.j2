@@ -2,55 +2,44 @@
 
 {% block content %}
 
-  <table width=480>
-    <tr>
-      <td width=160 height=100></td>
-      <td width=160>
-        {% if resource.meta.cards['N'] %}
-          <b>North</b><br />
-          S: {{ resource.meta.cards['N'].split('.')[0] }}<br />
-          H: {{ resource.meta.cards['N'].split('.')[1] }}<br />
-          D: {{ resource.meta.cards['N'].split('.')[2] }}<br />
-          C: {{ resource.meta.cards['N'].split('.')[3] }}<br />
-        {% endif %}
-      </td>
-      <td width=160></td>
-    </tr>
-    <tr>
-      <td height=100>
-        {% if resource.meta.cards['W'] %}
-          <b>West</b><br />
-          S: {{ resource.meta.cards['W'].split('.')[0] }}<br />
-          H: {{ resource.meta.cards['W'].split('.')[1] }}<br />
-          D: {{ resource.meta.cards['W'].split('.')[2] }}<br />
-          C: {{ resource.meta.cards['W'].split('.')[3] }}<br />
-        {% endif %}
-      </td>
-      <td></td>
-      <td>
-        {% if resource.meta.cards['E'] %}
-          <b>East</b><br />
-          S: {{ resource.meta.cards['E'].split('.')[0] }}<br />
-          H: {{ resource.meta.cards['E'].split('.')[1] }}<br />
-          D: {{ resource.meta.cards['E'].split('.')[2] }}<br />
-          C: {{ resource.meta.cards['E'].split('.')[3] }}<br />
-        {% endif %}
-      </td>
-    </tr>
-    <tr>
-      <td height=100></td>
-      <td>
-        {% if resource.meta.cards['S'] %}
-          <b>South</b><br />
-          S: {{ resource.meta.cards['S'].split('.')[0] }}<br />
-          H: {{ resource.meta.cards['S'].split('.')[1] }}<br />
-          D: {{ resource.meta.cards['S'].split('.')[2] }}<br />
-          C: {{ resource.meta.cards['S'].split('.')[3] }}<br />
-        {% endif %}
-      </td>
-      <td></td>
-    </tr>
-  </table>
+<div class="diagram">
+  <div class="header">
+    <div>{{ {'N': 'North', 'E': 'East', 'S': 'South', 'W': 'West'}.get(resource.meta.dealer) }} Dealer</div>
+    <div>{{ resource.meta.vulnerable or '&mdash;' }} Vulnerable</div>
+  </div>
+
+  <div class="hand north">
+    <div class="seatname">North</div>
+    <div class="spade holding"  >{{ ' '.join(resource.meta.cards['N'].split('.')[0]) or '&mdash;' }}</div>
+    <div class="heart holding"  >{{ ' '.join(resource.meta.cards['N'].split('.')[1]) or '&mdash;' }}</div>
+    <div class="diamond holding">{{ ' '.join(resource.meta.cards['N'].split('.')[2]) or '&mdash;' }}</div>
+    <div class="club holding"   >{{ ' '.join(resource.meta.cards['N'].split('.')[3]) or '&mdash;' }}</div>
+  </div>
+
+  <div class="hand east">
+    <div class="seatname">East</div>
+    <div class="spade holding"  >{{ ' '.join(resource.meta.cards['E'].split('.')[0]) or '&mdash;' }}</div>
+    <div class="heart holding"  >{{ ' '.join(resource.meta.cards['E'].split('.')[1]) or '&mdash;' }}</div>
+    <div class="diamond holding">{{ ' '.join(resource.meta.cards['E'].split('.')[2]) or '&mdash;' }}</div>
+    <div class="club holding"   >{{ ' '.join(resource.meta.cards['E'].split('.')[3]) or '&mdash;' }}</div>
+  </div>
+
+  <div class="hand west">
+    <div class="seatname">West</div>
+    <div class="spade holding"  >{{ ' '.join(resource.meta.cards['W'].split('.')[0]) or '&mdash;' }}</div>
+    <div class="heart holding"  >{{ ' '.join(resource.meta.cards['W'].split('.')[1]) or '&mdash;' }}</div>
+    <div class="diamond holding">{{ ' '.join(resource.meta.cards['W'].split('.')[2]) or '&mdash;' }}</div>
+    <div class="club holding"   >{{ ' '.join(resource.meta.cards['W'].split('.')[3]) or '&mdash;' }}</div>
+  </div>
+
+  <div class="hand south">
+    <div class="seatname">South</div>
+    <div class="spade holding"  >{{ ' '.join(resource.meta.cards['S'].split('.')[0]) or '&mdash;' }}</div>
+    <div class="heart holding"  >{{ ' '.join(resource.meta.cards['S'].split('.')[1]) or '&mdash;' }}</div>
+    <div class="diamond holding">{{ ' '.join(resource.meta.cards['S'].split('.')[2]) or '&mdash;' }}</div>
+    <div class="club holding"   >{{ ' '.join(resource.meta.cards['S'].split('.')[3]) or '&mdash;' }}</div>
+  </div>
+</div>
 
   {% block main %}
   {% endblock main %}

@@ -7,3 +7,4 @@ plugins:
     - hyde.ext.plugins.meta.AutoExtendPlugin
 meta:
     author: Mark Dessain
+    viewport: width=device-width, initial-scale=1.0

@@ -1,53 +1,196 @@
 * {
-    vertical-align: baseline;
-    font-weight: inherit;
-    font-family: inherit;
-    font-style: inherit;
-    text-decoration:inherit;
-    font-size: 100%;
-    padding: 0;
-    border: 0;
-    margin: 0;
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  text-decoration:inherit;
+  font-size: 100%;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
-    display:block;
+  display:block;
 }
-
-table {
-    border-collapse: collapse;
-}
-
 
 body{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #efefef;
-    padding: 0;
-    margin: 0;
-    text-shadow: 0px 2px 0px #efefef;
+  font-family: 'Slabo 27px', serif;
+  background-color: #efefef;
+  padding: 0;
+  margin: 0;
 }
 
-#container{
-          background-color: #eaeaea;
-          width: 640px;
-         margin: 0 auto;
-         padding: 12px;
--moz-box-shadow: 0px 4px 12px #ccc; /* FF3.5+ */
--webkit-box-shadow: 0px 4px 12px #ccc; /* Saf3.0+, Chrome */
-      box-shadow: 0px 4px 12px #ccc; /* Opera 10.5, IE 9.0 */
-          filter:  progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='#ccc'); /* IE6,IE7 */
-      -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='#ccc')"; /* IE8 */
-}
-
-.banner{
-    border-bottom: 12px solid #222;
-    padding: 0 12px;
-    position: relative;
-}
 
 .banner h1{
-    font-weight: 100;
-    font-size: 32px;
-    line-height: 48px;
+  font-weight: 100;
+  font-size: 62px;
+  line-height: 108px;
+}
+
+.banner h2{
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 108px;
+  padding: 0 0 0 20px;
+}
+
+
+.content {
+  background-color: green;
+  color: white;
+}
+
+
+.holding:before {
+    font-family: "Courier New",Courier, monospace;
+}
+
+.spade:before {
+    color: black;
+   content: "\2660  ";
+}
+
+.heart:before {
+   color: red;
+   content: "\2665  ";
+}
+
+.diamond:before {
+   content: "\2666  ";
+   color: red;
+}
+
+.club:before {
+    color: black;
+   content: "\2663  ";
+}
+
+.diagram .header {
+  font-size: smaller;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  margin-bottom: 0;
+  margin-top: auto;
+  padding: 0.25em;
+  border: 0.1em outset;
+  background: #FFFFFF;
+  color: black;
+}
+
+.red {
+    color: red;
+}
+
+.hand .seatname {
+  margin-left: 1em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+.diagram .north {
+  padding-bottom: 1ex;
+}
+
+.diagram  .south {
+  clear: both;
+  padding-top: 1ex;
+}
+
+.diagram  .west {
+  float: left;
+  clear: left;
+}
+
+.diagram  .east {
+  float: right;
+}
+
+.diagram .header {
+  width: 6em;
+  /*float: left;*/
+  border: 0;
+}
+
+
+
+@media (min-width:0px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  .banner h1{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .banner h2{
+    display: none;
+  }
+
+  .content {
+    font-size: 20px;
+  }
+
+  .diagram {
+    width: 96%;
+    padding: 2%;
+  }
+
+  .diagram .header{
+    /*width: 80%;*/
+    /*padding: 2%;*/
+    /*margin-bottom: 20px;*/
+    /*background-color: darkgreen;*/
+    /*color: white;*/
+  }
+
+  .diagram  .hand {
+    width: 160px;
+  }
+
+  .diagram  .south , .diagram  .north {
+    margin-left: 35%;
+  }
+
+}
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+  .banner h1{
+    display: inline;
+  }
+
+  .banner h2{
+    display: inline;
+  }
+
+  #container{
+    width: 100%;
+    margin: 20px auto 50px auto;
+  }
+
+  .content {
+    font-size: 28px;
+    /*border: 20px solid #654321;*/
+  }
+
+  .diagram {
+    width: 80%;
+    padding: 10%;
+  }
+
+  .diagram  .hand {
+    width: 210px;
+  }
+
+  .diagram  .south , .diagram  .north {
+    margin-left: 35%;
+  }
+}
+@media (min-width:960px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+    #container{
+      width: 960px;
+      margin: 20px auto 50px auto;
+    }
 }
