@@ -43,7 +43,7 @@ body{
 }
 
 
-.holding:before {
+.holding:before, .holding:after  {
     font-family: "Courier New",Courier, monospace;
 }
 
@@ -116,6 +116,52 @@ body{
 
 
 
+@media (max-width:739px)  {
+
+  .diagram  .east {
+    text-align: right;
+  }
+
+
+  .east .spade:before {
+     content: "";
+  }
+
+  .east .heart:before {
+     content: "";
+  }
+
+  .east .diamond:before {
+     content: "";
+  }
+
+  .east .club:before {
+     content: "";
+  }
+
+  .east .spade:after {
+    color: black;
+     content: "  \2660";
+  }
+
+  .east .heart:after {
+    color: red;
+     content: "  \2665";
+  }
+
+  .east .diamond:after {
+    color: red;
+     content: "  \2666";
+  }
+
+  .east .club:after {
+    color: black;
+     content: "  \2663";
+  }
+
+
+
+}
 @media (min-width:0px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 
   .banner h1{
@@ -129,12 +175,12 @@ body{
   }
 
   .content {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .diagram {
-    width: 96%;
-    padding: 2%;
+    width: 90%;
+    padding: 5%;
   }
 
   .diagram .header{
@@ -146,15 +192,15 @@ body{
   }
 
   .diagram  .hand {
-    width: 160px;
+    width: 180px;
   }
 
   .diagram  .south , .diagram  .north {
-    margin-left: 35%;
+    margin: 0 40%;
   }
 
 }
-@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:740px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 
   .banner h1{
     display: inline;
