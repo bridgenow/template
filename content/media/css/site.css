@@ -114,8 +114,6 @@ body{
   border: 0;
 }
 
-
-
 @media (max-width:739px)  {
 
   .diagram  .east {
@@ -179,8 +177,8 @@ body{
   }
 
   .diagram {
-    width: 90%;
-    padding: 5%;
+    width: 96%;
+    padding: 2%;
   }
 
   .diagram .header{
@@ -192,7 +190,7 @@ body{
   }
 
   .diagram  .hand {
-    width: 160px;
+    width: 170px;
   }
 
   .diagram  .south , .diagram  .north {
@@ -200,6 +198,20 @@ body{
   }
 
 }
+
+
+@media (max-width:500px)  {
+  .content {
+    font-size: 20px;
+  }
+  .diagram  .hand {
+    width: 150px;
+  }
+
+}
+
+
+
 @media (min-width:740px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 
   .banner h1{
